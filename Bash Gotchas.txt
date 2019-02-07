@@ -1,0 +1,7 @@
+File Header
+#!/bin/bash
+
+Modify Permissions
+chmod u+x foo.sh
+
+Ensure the file is using LF line breaks/endings not CRLF (windows)
