@@ -7,7 +7,7 @@ Original OctoPrint Guide : https://discourse.octoprint.org/t/setting-up-octoprin
 ## Description
 
 This guide was created because following the original guide lead to some problems. Plus I wanted Ubuntu running Octoprint and a true webcam stream (not time-lapse photos). Performance is much better than a RaspPI.
- 
+
 Everything was configured in this order from a fresh desktop installation.
 I chose to autologon my main user because security isn't a real concern here.
 Desktop was chosen over Server because I wanted to use the computer for other clicky pointy things in my garage.
@@ -56,6 +56,7 @@ pip install https://get.octoprint.org/latest
 ```
 
 Then exit out of `venv` and start in terminal with:
+
 ```
 ~/OctoPrint/venv/bin/octoprint serve
 ```
@@ -83,8 +84,6 @@ G1 F200 E55 ;extrude 55mm of feed stock
 G92 E0 ;zero the extruded length again
 G1 F15000 ; set travel speed
 G0 X20 Y50 F15000 ; move head back
-
-
 ```
 
 #### Print Complete or Canceled
@@ -125,17 +124,20 @@ Create `~/startup`
 Move `.\config-files\startup\` to `~/startup/`
 
 Assign Execute Permissions:
+
 ```
 chmod u+x ~/startup/start_motion.sh
 chmod u+x ~/startup/start_octoprint.sh
 ```
 
 Test with:
+
 ```
 cd ~/startup
 ./start_motion.sh
 ./start_octoprint.sh
 ```
+
 Browse to `Startup Applications` and add these scripts.
 
 ## Conclusion
