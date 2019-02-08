@@ -75,8 +75,8 @@ G90 ;absolute positioning
 M82 ;set extruder to absolute mode
 M107 ;start with the fan off
 G28 ;home
-M190 S80 ;bed temperature wait
-M109 S230 ;extruder temperature wait
+M190 S70 ;bed temperature wait
+M109 S220 ;extruder temperature wait
 G0 X20 Y20 F15000 ;bring extruder to the front
 G1 Z25 F15000 ;move the platform down 25mm
 G92 E0 ;zero the extruded length
