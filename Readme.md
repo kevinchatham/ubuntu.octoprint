@@ -80,13 +80,13 @@ M109 S220 ;extruder temperature wait
 G0 X20 Y20 F15000 ;bring extruder to the front
 G1 Z25 F15000 ;move the platform down 25mm
 G92 E0 ;zero the extruded length
-G1 F200 E55 ;extrude 55mm of feed stock
-G92 E0 ;zero the extruded length again
-G1 F15000 ; set travel speed
-G0 X20 Y50 F15000 ; move head back
+G1 F200 E30 ;extrude 30mm of feed stock
+G92 E0 ; zero the extruded length again
+G1 F12500 ; set travel speed
+G0 X20 Y50 F12500 ; move head back
 ```
 
-#### Print Complete or Canceled
+#### Print Complete
 
 ```
 M107 ;fans off
@@ -98,6 +98,47 @@ M84 ;steppers off
 G90 ;absolute positioning
 M140 S50 ;bed temperature don't wait
 M104 S75 ;extruder temperature don't wait
+```
+
+#### Print Canceled
+
+```
+M107 ;fans off
+G91 ;relative positioning
+G1 E-1 F200 ;retract the filament a bit before lifting the nozzle, to release some of the pressure
+G1 Z+5 E-25 F15000 ;move Z up a bit and retract filament even more
+G28 ;Home
+M84 ;steppers off
+G90 ;absolute positioning
+M140 S70 ;bed temperature don't wait
+M104 S220 ;extruder temperature don't wait
+```
+
+#### Simplify3D Default Start
+
+```
+M907 E1400 ; increase extruder current
+G28 ; home all axes
+G1 X20 Y10 F3000 ; bring extruder to front
+G92 E0 ; zero the extruded length
+G1 Z10 ; lower
+G1 E19 F200 ; purge nozzle quickly
+G1 E26 F60 ; purge nozzle slowly
+G92 E0 ; zero the extruded length again
+G1 E-5.5 F400 ; retract
+G1 X190 Z0 F9000 ; pull away filament
+G1 X210 F9000 ; wipe
+G1 Y20 F9000 ; wipe
+G1 E0 ; feed filament back
+```
+
+#### Simplify3D Default End
+
+```
+G28 X0 ; home the X-axis
+M104 S0 ; turn off heaters
+M140 S0 ; turn off bed
+M84 ; disable motors
 ```
 
 ## Motion / Configure Webcam
