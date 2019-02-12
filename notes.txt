@@ -1,0 +1,3 @@
+Max Retraction Settings
+max distance : 4.5mm
+max speed : 25mm/s or 1500mm/m
