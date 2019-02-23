@@ -67,51 +67,52 @@ Browse to `http://0.0.0.0:5000/`
 
 In OctoPrint, click the settings wrench and find GCODE. Then add these scripts as needed.
 
+If scripts are not defined in the slicer don't forget to add them to octoprint. Also, on start,
+don't forget to wait on temp with `M190 S70 ;bed temperature wait` and `M109 S220 ;extruder temperature wait`.
+It works well after `G28 ;home`.
+
 #### Start
 
 ```
 G21 ;metric values
 G90 ;absolute positioning
 M82 ;set extruder to absolute mode
-M107 ;start with the fan off
 G28 ;home
-M190 S70 ;bed temperature wait
-M109 S220 ;extruder temperature wait
 G0 X20 Y20 F15000 ;bring extruder to the front
 G1 Z25 F15000 ;move the platform down 25mm
 G92 E0 ;zero the extruded length
-G1 F200 E30 ;extrude 30mm of feed stock
+G1 F150 E40 ;prime nozzle 20mm
 G92 E0 ; zero the extruded length again
-G1 F12500 ; set travel speed
 G0 X20 Y50 F12500 ; move head back
 ```
 
 #### Print Complete
 
 ```
-M107 ;fans off
 G91 ;relative positioning
-G1 E-1 F200 ;retract the filament a bit before lifting the nozzle, to release some of the pressure
-G1 Z+5 E-25 F15000 ;move Z up a bit and retract filament even more
+G1 E-1 F200 ;retract the filament a bit before lifting the nozzle to release some of the pressure
+G1 Z+5 E-15 F1500 ;move Z up a bit and retract filament even more
 G28 ;Home
 M84 ;steppers off
 G90 ;absolute positioning
 M140 S50 ;bed temperature don't wait
-M104 S75 ;extruder temperature don't wait
+M106; Fans on full speed for nozzle cooling
+M109 S90; Wait for temp to cool.
+M107 ; Fans off
 ```
 
-#### Print Canceled
+#### Print Canceled (Octoprint Only)
 
 ```
 M107 ;fans off
 G91 ;relative positioning
-G1 E-1 F200 ;retract the filament a bit before lifting the nozzle, to release some of the pressure
-G1 Z+5 E-25 F15000 ;move Z up a bit and retract filament even more
+G1 E-1 F200 ;retract the filament a bit before lifting the nozzle to release some of the pressure
+G1 Z+5 E-15 F1500 ;move Z up a bit and retract filament even more
 G28 ;Home
 M84 ;steppers off
 G90 ;absolute positioning
 M140 S70 ;bed temperature don't wait
-M104 S220 ;extruder temperature don't wait
+M104 S100 ;extruder temperature don't wait
 ```
 
 #### Simplify3D Default Start
