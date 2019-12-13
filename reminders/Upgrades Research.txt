@@ -1,0 +1,19 @@
+UM2 Upgrade Paper
+https://github.com/StrawsonDesign/Ultimaker2_Mods/blob/master/Ultimaker%202%20Experiences%20and%20modifications.pdf
+
+https://community.ultimaker.com/topic/11434-detailed-documentation-of-our-hardware-and-software-mods-for-reliable-printing/
+
+Knobbed Wheel
+https://www.amazon.com/gp/product/B07CJPP7R7/ref=ppx_yo_dt_b_asin_title_o00__o00_s00?ie=UTF8&psc=1
+
+Official UM2 Extrusion Upgrade Kit
+https://ultimaker.com/en/products/extrusion-upgrade-kit
+
+Bondtech Upgrade Kit (best feeder?)
+https://www.bondtech.se/en/product/qr-ultimaker-2-kit/
+
+40W Heater
+https://thegr5store.com/store/index.php/um2/ultimaker2-hot-end-heater-35w-32.html
+
+Heater Stop Error Discussion
+https://community.ultimaker.com/topic/11822-error-stopped-heater-error/

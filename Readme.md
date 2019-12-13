@@ -81,7 +81,7 @@ G28 ;home
 G0 X20 Y20 F15000 ;bring extruder to the front
 G1 Z25 F15000 ;move the platform down 25mm
 G92 E0 ;zero the extruded length
-G1 F150 E40 ;prime nozzle 20mm
+G1 F150 E40 ;prime nozzle 40mm
 G92 E0 ; zero the extruded length again
 G0 X20 Y50 F12500 ; move head back
 ```
@@ -97,7 +97,7 @@ M84 ;steppers off
 G90 ;absolute positioning
 M140 S50 ;bed temperature don't wait
 M106; Fans on full speed for nozzle cooling
-M109 S90; Wait for temp to cool.
+M109 S90; Wait for temp to cool 
 M107 ; Fans off
 ```
 

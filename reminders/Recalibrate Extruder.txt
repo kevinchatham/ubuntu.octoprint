@@ -1,0 +1,24 @@
+M503 ; get current settings 
+
+; Cut 150MM from bottom of feeder
+
+G92E0 ; Reset Extruder
+G1E100F30 ; Extrude 100 MM at 30mm/min
+
+; Measure Again
+
+; Length Actually Pushed Through
+; 150-61.2 = 88.8mm (C)
+
+; Recalculate New Value
+; ( A * 100 ) / C
+; A = Old Steps Per MM (Default  Steps Per MM 282.00)
+; C = Actual Extruded Length (see above)
+
+M92E318 ; Temporarily Set New Steps Per MM (or do it in tinker menu motion settings)
+
+M500 ; Remember new values / Save
+
+; Hobbled Gear = 318 Steps Per MM
+
+; Get average diameter of filament
